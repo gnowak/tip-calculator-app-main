@@ -1,10 +1,203 @@
-:root{
-    --strong-cyan: hsl(172, 67%, 45%);
-    --very-dark-cyan: hsl(183, 100%, 15%);
-    --dark-grayish-cyan: hsl(186, 14%, 43%);
-    --light-grayish-cyan: hsl(185, 41%, 84%);
-    --white: hsl(0, 0%, 100%);
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --white: hsl(0, 0%, 100%);
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background: var(--light-grayish-cyan);
+  font-family: "Space Mono", monospace;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+}
+main {
+  background: var(--white);
+  border-radius: 25px;
+  padding: 0 1rem 1rem;
+}
+
+form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  font-weight: 900;
+  width: fit-content;
+  margin: 0 auto;
+}
+fieldset {
+  border: none;
+  font-size: 12px;
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  margin: 1rem 0;
+  color: hsl(186, 14%, 43%);
+  font-weight: 700;
+}
+
+.icon span {
+  position: absolute;
+}
+
+.icon {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.long-text {
+  font-family: "Space Mono", monospace;
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+  color: var(--very-dark-cyan);
+  border: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.dollar-icon {
+  background: hsl(189, 41%, 97%) url(../images/icon-dollar.svg) no-repeat 0.5rem;
+}
+.person-icon {
+  background: hsl(189, 41%, 97%) url(../images/icon-person.svg) no-repeat 0.5rem;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tip-button {
+  background: var(--very-dark-cyan);
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0.5rem;
+  padding: 0.5rem 0;
+  width: 125px;
+}
+.tip-button:hover,
+.tip-button:focus,
+.tip-button:active {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.active {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.buttons input:hover,
+.buttons input:focus,
+.buttons input:active {
+  background: var(--white);
+  color: var(--very-dark-cyan);
+}
+
+.buttons input {
+  background: hsl(189, 41%, 97%);
+  color: var(--very-dark-cyan);
+  text-align: right;
+  box-sizing: border-box;
+  padding-right: 0.5rem;
+}
+
+.totals {
+  padding: 1rem 0.5rem 0.5rem;
+  background: var(--very-dark-cyan);
+  border-radius: 25px;
+  margin: 0 0 2rem;
+  width: 100%;
+}
+
+.total-inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0.5rem 1.5rem;
+  font-size: 14px;
+  color: var(--white);
+}
+.total-inner span {
+  font-size: 12px;
+  color: var(--dark-grayish-cyan);
+}
+.total-text {
+  font-size: 26px;
+  color: var(--strong-cyan);
+}
+
+.reset {
+  background: var(--strong-cyan);
+  border-radius: 5px;
+  border: none;
+  color: var(--very-dark-cyan);
+  font-family: "Space Mono", monospace;
+  font-size: 20px;
+  font-weight: 900;
+  margin: 1rem auto 2rem;
+  text-align: center;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.attribution {
+  margin: 4rem 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 800px) {
+  main {
+    width: 65%;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  form {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .fields {
+    flex: 40%;
+  }
+  .buttons {
+    flex: 30%;
+    flex-flow: row wrap;
+  }
+  .totals {
+    flex: 40%;
+    display: flex;
+    flex-flow: column;
+    padding: 4rem 1rem 2rem;
+    margin-left: 1rem;
+  }
+  .reset {
+    margin-top: auto;
+  }
+}
